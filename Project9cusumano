@@ -1,0 +1,29 @@
+//Project 9 Tara Cusumano
+
+Fish Tara;
+
+float x,y,w,h;
+float horizon;
+
+
+
+class Fish{
+    //properties
+    float x=200,y=-300,dx=100,dy=200;
+    float width=30;
+    int hands=1;
+    int num;
+}
+
+void setup(){
+  background(255,200,150);
+  size(640,480);
+  horizon=height/2;
+  Tara= new Fish();
+
+
+}
+  
+
+    
+  
