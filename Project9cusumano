@@ -1,45 +1,36 @@
 //Project 9 Tara Cusumano
 
-Fish Tara;
-
-float x,y,w,h;
-float horizon;
-
-
-
-class Fish{
-    //properties
-    float x=200,y=-300,dx=100,dy=200;
-    float width=30;
-    float r=200,g=150,b=150;
-    int hands=1;
-    int num;
-}
+float ricky,nicky,dicky;
+float surface;
+float shipX=0,shipDX=5;
+float moonX=0,moonY=100;
 
 void setup(){
-  background(255,200,200);
   size(640,480);
-  horizon=height/2;
-  
-  Tara= new Fish();
-  Tara.r=200;
-  Tara.g=150;
-  Tara.b=150;
-
-reset();
-}
-void reset(){
-Tara.hands=1;
-
- 
-
-
-}
-void draw(){
-  
-  
-
+  background(50,150,200);
+  reset();
+  }
+  void reset(){
+    surface= random(height/4,height/4);
+    moonY=surface/2;
+    moonY=random(100,surface+100);
+    ricky=width/4;
+    nicky=width/4;
+    dicky=width/4;
+  }
+  void draw(){
+    scene();
     
-}
-    
-  
+  }
+  void scene(){
+    if(moonX>width+50){
+      moonX=-100;
+      moonY=random(50,surface+25);
+    }
+    moonX+=1;
+    fill(200,150,50);
+    ellipse(moonX,moonY-50,40,40);
+    //water
+    fill(0,100,50);
+    rect(0,surface,width,height-surface);
+  }
